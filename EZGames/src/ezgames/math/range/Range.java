@@ -12,14 +12,13 @@ public interface Range extends Comparable<Range>
     * @return -1 if a is fully less than b; 0 if a and b overlap or are equal; 1 if a is fully greater than b 
     */
    @Override
-	public default int compareTo(Range b)
-	{
-	   if(this.getMaximum() < b.getMinimum())
-		   return -1;
-	   if(this.getMinimum() > b.getMaximum())
-		   return 1;
-	   return 0;
-	}
+   public default int compareTo(Range b) {
+      if(this.getMaximum() < b.getMinimum())
+         return -1;
+      if(this.getMinimum() > b.getMaximum())
+         return 1;
+      return 0;
+   }
    @Override
    public boolean equals(Object o);   
    /**
